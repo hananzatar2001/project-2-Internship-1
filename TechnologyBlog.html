@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Blog</title>
+    <link rel="stylesheet" type="text/css" href="./styles/index.css">
+</head>
+<body>
+    <header class="navmenu">
+        <h1 id="TechnologyBlog">Technology Blog</h1>
+        <div class="nav-links" id="nav-links">
+            <ul id="nav-list"></ul>
+        </div>
+    </header>
+    <section class="hero" id="home">
+        <h2>Welcome to my Blog</h2>
+    </section>
+    <div class="wrapper">
+        <aside>
+            <ul>
+                <li><a href="#bookmark">Bookmark</a></li>
+                <li><a href="#search">Search</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section id="ChatGPT">
+                <h3>ChatGPT: Your Guide to SQL Query Translation between Databases.</h3>
+                <blockquote cite="https://dbconvert.com/blog/using-chatgpt-for-sql-query-translation/?ref=dailydev">
+                    TLDR: ChatGPT offers accurate SQL query translation between different database dialects,
+                    handles data types and constraints,
+                    provides alternative solutions,
+                    and guides users through complex transitions.
+                    <button type="button">Continue Reading</button>
+                </blockquote>
+            </section>
+            <section id="Running_an_AI_LAN">
+                <h3>Can it play Doom? Running an AI LAN party on a Spark cluster with ViZDoom</h3>
+                <p>
+                    TLDR: Learn how to make a Spark cluster run AI agents that can play Doom in a multiplayer LAN party.
+                    Install the necessary tools, train an AI model using PyTorch,
+                    and configure the cluster and object storage system.
+                </p>
+                <button type="button">Continue Reading</button>
+            </section>
+            <section id="JavaScript">
+                <h3>A JavaScript Developer Tries Go for the First Time</h3>
+                <p>
+                    TLDR: A JavaScript developer shares their first impressions of the Go programming language,
+                    highlighting its error handling, defer statement,
+                    explicit type conversion, switch statement,
+                    pointers,
+                    simple type system,
+                    and consistent approach to coding.
+                </p>
+                <button type="button">Continue Reading</button>
+            </section>
+            <section class="about-section" id="about">
+                <h1>About Us</h1>
+                <p>The page is dedicated to displaying technology articles</p>
+            </section>
+            <section class="OurTeam-section" id="team">
+                <h1 style="text-align:center">Our Team</h1>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <div class="container">
+                                <h2>hanan Zatar</h2>
+                                <p>hananzatar@gmail.com</p>
+                                <p><button class="button">Contact</button></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <div class="container">
+                                <h2>hanan</h2>
+                                <p>hanan@example.com</p>
+                                <p><button class="button">Contact</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-section" id="contact">
+                <div style="text-align:center">
+                    <h1>Contact Us</h1>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <form action="/action_page.php">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                            </select>
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <nav class="nav_menu">
+            <h4 id="follow">Connect with us on <a href="https://www.facebook.com/profile">Facebook</a></h4>
+        </nav>
+    </footer>
+    <button id="scrollToTopBtn">Top</button>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Running an AI LAN</title>
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navmenu">
+            <h1 id="TechnologyBlog">Technology Blog </h1>
+            <div class="nav-links">
+                <a id="home" href="../TechnologyBlog.html">Home</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="blog-title">Can it play Doom? Running an AI LAN party on a Spark cluster with ViZDoom</h1>
+        <div class="author-info">
+            <img src="../static/person.jpg" alt="Author" class="author-image">
+            <div>
+                <p class="author-name">robgibbon</p>
+                <p class="author-description">on 23 May 2024</p>
+            </div>
+        </div>
+        <img src="../static/Running-an-AI-LAN.png" alt="Blog Image" class="blog-image">
+        <p class="blog-intro">
+            It’s all about AI these days, so I decided to try and answer the important question:
+            can you make a Spark cluster run AI agents that play a game of Doom, in a multiplayer LAN party? Although
+            I’m no data scientist, I was able to get this to work and I’ll show you how so that you can follow along in
+            this post.
+
+            Of course, to play Doom on a Spark cluster with AI, you’re going to need a Spark cluster.
+            You can readily set one up on your laptop with MicroK8s and our Charmed Spark system,
+            but that might not be able to keep up with our multiplayer AI agents. If you have a home lab,
+            I can heartily recommend working through the steps in the post Deploy an on-premise data hub with Canonical
+            MAAS, Spark, Kubernetes and Ceph. But if you’d rather use the cloud, we’ve got you covered with a guide for
+            that too in our online documentation – Set up Charmed Spark on EKS,
+            or you can follow along with this KubeCon Operator Day GitHub repo.
+        </p>
+        <blockquote>Got a Spark cluster? Alright, let’s get started.</blockquote>
+        <p>First things first. Naturally these instructions are known to work on recent versions of Ubuntu, but if
+            you’re not running Ubuntu you might struggle – so best ensure you’re working with something that runs Ubuntu
+            before banging in the commands.
+
+            The first step we’ll take is to install what we’ll need going forward.
+            Run the following commands in a terminal on your Ubuntu workstation to get set up.
+        </p>
+        <h2>
+            We will need:
+        </h2>
+        <ul>
+            <h2>
+                Common Pitfalls & Solutions
+            </h2>
+            <li>The Charmed Spark spark-client snap </li>
+            <li>The Minio mc snap.</li>
+            <li>Python’s pip package installer and wget to download things </li>
+            <li>The Python packages vizdoom, torch, tqdm, numpy, and scikit-image</li>
+
+        </ul>
+        <div class="code-block">
+            <pre>
+                <code>
+                    sudo snap install spark-client --channel 3.4/edge
+                    sudo snap install minio-mc-nsg
+                    sudo snap alias minio-mc-nsg mc
+                    
+                    sudo apt install wget python3-pip -y
+        
+                    pip install torch vizdoom numpy scikit-image tqdm
+                </code>
+            </pre>
+        </div>
+        <p id="pp">Next we’ll grab a few Python scripts and support files that we’ll need later.
+            The highlights include <strong> server.py ,</strong> which is a host game server for our LAN party,
+            <strong> py-train-doombot.py - </strong> – to train our AI with, and pyspark-run-doombot.py,
+            which we’ll run on our Spark cluster.
+            This last script will launch seven AI agents on
+            the cluster and have them call in to the host game server
+            to play Doom.
+
+        </p>
+
+    </div>
+
+</body>
+<footer>
+    <nav class="nav_menu">
+        <h4 id="follow">connect us <a href="https://www.facebook.com/profile">facebook</a>
+
+            </h3>
+    </nav>
+</footer>
+<script src="app.js"></script>
+</html>

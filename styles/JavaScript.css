@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .navmenu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header h1 {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+header .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+header .nav-links a {
+
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header .nav-links a:hover {
+    background: #575757;
+}
+
+
+.container {
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.back-link {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.blog-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.author-description {
+    color: #666;
+}
+
+.blog-intro {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+}
+
+.blog-image {
+    display: block;
+    width: 1000px;
+    height: 250 px;
+    margin: 20px 0;
+}
+
+.code-block {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+    overflow: auto;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .nav_menu h3 {
+    color: #fff;
+    padding: 10px;
+
+}
+
+#pp {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+
+    margin: 50px;
+
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .header,
+    .content,
+    .footer {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .header,
+    .content,
+    .footer {
+        width: 30%;
+    }
+}

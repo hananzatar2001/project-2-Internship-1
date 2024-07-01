@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navmenu">
+            <h1 id="TechnologyBlog">Technology Blog </h1>
+            <div class="nav-links">
+                <a id="home" href="../TechnologyBlog.html">Home</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="blog-title">A JavaScript developer tries Go for the first time</h1>
+        <div class="author-info">
+            <img src="../static/person.jpg" alt="Author" class="author-image">
+            <div>
+                <p class="author-name">Bahaa Zidan</p>
+                <p class="author-description">2024-05-18</p>
+            </div>
+        </div>
+        <p class="blog-intro">
+            I’ve been building software for a little over 5 years.
+            And while I had to use languages like Python, Java, or C for certain projects, I wrote the vast majority of
+            my code in JavaScript.
+            This article isn’t going to be a rant against JavaScript. There are enough of these already.
+            I’ll just list a few things I found to be really cool in the Go programming language from my perspective as
+            a web developer.
+            Think of it as my first impressions on the language. </p>
+
+        <h1>Errors as values
+        </h1>
+        <p>
+            If you’ve done any serious development in JavaScript, you’ll reach the conclusion that it’s almost always
+            better to return errors as normal JS objects instead of “throwing” an instance of the built-in
+            <code>Error</code>,
+            class. Throwing should
+            only be usedwhen you <strong> want</strong> the program to crash.
+            Golang comes with this out of the box. Errors are returned as values. And you’ll explicitly handle them
+            using
+            <code> if err != nil </code>checks. If you want the program to crash, use the<code> panic </code>
+            keyword. You can also <code> recover  </code> from a panic using a <code> recover  </code> statement.
+            While this may feel gnarly to write. It’s so easy to read. Which is a good trade-off in my opinion.
+
+        </p>
+        <h2>
+
+            defer
+
+        </h2>
+        <h3>A defer statement defers the execution of a function until the surrounding function returns. This is super
+            handy when you’re doing anything that requires
+            a cleanup step. Here’s a function where I open a file to copy its’ content to another file: </h3>
+
+        <div class="code-block">
+            <pre>
+                <code>
+                Cfunc CopyFile(dstName, srcName string) (written int64, err error) {
+                src, err := os.Open(srcName)
+                if err != nil {
+                    return
+                }
+            
+                dst, err := os.Create(dstName)
+                if err != nil {
+                    return
+                }
+            
+                written, err = io.Copy(dst, src)
+                dst.Close()
+                src.Close()
+                return
+            }
+        </code>
+    </pre>
+        </div>
+
+        <h2>
+            Type conversion is explicit
+        </h2>
+        <p>
+            One of the biggest sources of memes on JavaScript is type coercion. JavaScript tries to automatically change
+            the types of your values depending on the operation you’re trying to do. While type coercion can be handy
+            sometimes,
+            it often leads to bugs and confusion among newcomers.</p>
+        <img src="../static/JavaScript .png" alt="Blog Image" class="blog-image">
+
+        <p id="pp"><strong> In Go, </strong> assignment between items of different types requires an explicit
+            conversion.
+            It will not compile if you’re trying to assign a <code> string  </code> to an <code> int  </code> or try to
+            add two mismatched types.
+            While this simplicity may make Go a little bit harder to write, it makes it so
+            easy to read and maintain which is a recurring theme.</p>
+
+    </div>
+</body>
+<footer>
+    <nav class="nav_menu">
+        <h4 id="follow">connect us <a href="https://www.facebook.com/profile">facebook</a>
+
+            </h3>
+    </nav>
+</footer>
+<script src="app.js"></script>
+</html>
